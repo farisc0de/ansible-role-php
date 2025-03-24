@@ -9,7 +9,7 @@ group = {{ php_fpm_pool_group }}
 listen.owner = {{ php_fpm_pool_user }}
 listen.group = {{ php_fpm_pool_group }}
 
-{% if item.pool_listen_acl_users|length %}
+{% if item.pool_listen_acl_users is defined and item.pool_listen_acl_users|length %}
 listen.acl_users = {{ item.pool_listen_acl_users | join(',') }}
 {% endif %}
 
